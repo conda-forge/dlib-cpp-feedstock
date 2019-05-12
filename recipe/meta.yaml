@@ -11,7 +11,7 @@ source:
     - cxx11_detection.patch
 
 build:
-  skip: true  # [win]
+  skip: true  # [win and vc<14]
   number: 0
 
 requirements:
@@ -34,8 +34,7 @@ test:
     - test -f ${PREFIX}/include/dlib/svm.h  # [unix]
     - test -f ${PREFIX}/lib/libdlib${SHLIB_EXT}  # [unix]
     - if not exist %PREFIX%\\Library\\include\\dlib\\svm.h exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\lib\\dlib.lib exit 1  # [win]
-    - if not exist %PREFIX%\\Library\\bin\\dlib.dll exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\lib\\dlib{{ version }}.0_release_64bit_msvc1900.lib exit 1  # [win]
 
 about:
   home: http://dlib.net/
