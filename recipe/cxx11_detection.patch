@@ -9,7 +9,7 @@ index d3cf123f..aaa84988 100644
  
  
 diff --git a/dlib/CMakeLists.txt b/dlib/CMakeLists.txt
-index 9daeda02..bd39411d 100644
+index 9daeda02..9ec48d8f 100644
 --- a/dlib/CMakeLists.txt
 +++ b/dlib/CMakeLists.txt
 @@ -4,7 +4,7 @@
@@ -17,82 +17,82 @@ index 9daeda02..bd39411d 100644
  
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  if(POLICY CMP0048)
     cmake_policy(SET CMP0048 NEW)
 diff --git a/dlib/cmake b/dlib/cmake
-index d3695b30..33414c2d 100644
+index d3695b30..5de6955b 100644
 --- a/dlib/cmake
 +++ b/dlib/cmake
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  add_subdirectory(${CMAKE_CURRENT_LIST_DIR} dlib_build)
  
 diff --git a/dlib/cmake_utils/add_global_compiler_switch.cmake b/dlib/cmake_utils/add_global_compiler_switch.cmake
-index 5f3d83ce..9afba1be 100644
+index 5f3d83ce..ebca4518 100644
 --- a/dlib/cmake_utils/add_global_compiler_switch.cmake
 +++ b/dlib/cmake_utils/add_global_compiler_switch.cmake
 @@ -1,6 +1,6 @@
  
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  message(WARNING "add_global_compiler_switch() is deprecated.  Use target_compile_options() instead")
  
 diff --git a/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake b/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
-index a5d7320f..b8b651de 100644
+index a5d7320f..b44c554c 100644
 --- a/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 +++ b/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 @@ -1,6 +1,6 @@
  # This script checks if your compiler and host processor can generate and then run programs with AVX instructions.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # Don't rerun this script if its already been executed.
  if (DEFINED AVX_IS_AVAILABLE_ON_HOST)
 diff --git a/dlib/cmake_utils/check_if_neon_available.cmake b/dlib/cmake_utils/check_if_neon_available.cmake
-index 0510707d..6a9c9ca7 100644
+index 0510707d..129c724e 100644
 --- a/dlib/cmake_utils/check_if_neon_available.cmake
 +++ b/dlib/cmake_utils/check_if_neon_available.cmake
 @@ -1,6 +1,6 @@
  # This script checks if __ARM_NEON__ is defined for your compiler
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # Don't rerun this script if its already been executed.
  if (DEFINED ARM_NEON_IS_AVAILABLE)
 diff --git a/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake b/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
-index e2605819..b73f1cb4 100644
+index e2605819..b16954cf 100644
 --- a/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 +++ b/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 @@ -1,6 +1,6 @@
  # This script checks if your compiler and host processor can generate and then run programs with SSE4 instructions.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # Don't rerun this script if its already been executed.
  if (DEFINED SSE4_IS_AVAILABLE_ON_HOST)
 diff --git a/dlib/cmake_utils/set_compiler_specific_options.cmake b/dlib/cmake_utils/set_compiler_specific_options.cmake
-index af499cb5..0cf7d326 100644
+index af499cb5..3286c8c4 100644
 --- a/dlib/cmake_utils/set_compiler_specific_options.cmake
 +++ b/dlib/cmake_utils/set_compiler_specific_options.cmake
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  if (POLICY CMP0054)
     cmake_policy(SET CMP0054 NEW)
 diff --git a/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake b/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
-index e5fb0912..71a8a443 100644
+index e5fb0912..cb647784 100644
 --- a/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 +++ b/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 @@ -2,7 +2,7 @@
@@ -100,73 +100,73 @@ index e5fb0912..71a8a443 100644
  # to build your project against the static C runtime.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  if (POLICY CMP0054)
     cmake_policy(SET CMP0054 NEW)
  endif()
 diff --git a/dlib/cmake_utils/test_for_avx/CMakeLists.txt b/dlib/cmake_utils/test_for_avx/CMakeLists.txt
-index 7d724023..02a21d1e 100644
+index 7d724023..148d1d68 100644
 --- a/dlib/cmake_utils/test_for_avx/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_avx/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(avx_test)
  
  set(USE_AVX_INSTRUCTIONS ON CACHE BOOL "Use AVX instructions")
 diff --git a/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt b/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
-index bc6f0256..73e5c9e0 100644
+index bc6f0256..669bfb73 100644
 --- a/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(cpp11_test)
  
  # Try to enable C++11
 diff --git a/dlib/cmake_utils/test_for_cuda/CMakeLists.txt b/dlib/cmake_utils/test_for_cuda/CMakeLists.txt
-index 16de507e..387942d6 100644
+index 16de507e..0bfda2a8 100644
 --- a/dlib/cmake_utils/test_for_cuda/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_cuda/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(cuda_test)
  
  include_directories(../../cuda)
 diff --git a/dlib/cmake_utils/test_for_cudnn/CMakeLists.txt b/dlib/cmake_utils/test_for_cudnn/CMakeLists.txt
-index 08320594..fe73e6e8 100644
+index 08320594..c08a8b15 100644
 --- a/dlib/cmake_utils/test_for_cudnn/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_cudnn/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(cudnn_test)
  include(../use_cpp_11.cmake)
  
 diff --git a/dlib/cmake_utils/test_for_neon/CMakeLists.txt b/dlib/cmake_utils/test_for_neon/CMakeLists.txt
-index 0b6eb6f2..cb2b893b 100644
+index 0b6eb6f2..62480a41 100644
 --- a/dlib/cmake_utils/test_for_neon/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_neon/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(neon_test)
  
  add_library(neon_test STATIC neon_test.cpp )
 diff --git a/dlib/cmake_utils/test_for_sse4/CMakeLists.txt b/dlib/cmake_utils/test_for_sse4/CMakeLists.txt
-index 6a07d1a5..3c77c880 100644
+index 6a07d1a5..c9841144 100644
 --- a/dlib/cmake_utils/test_for_sse4/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_sse4/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(sse4_test)
  
  set(USE_SSE4_INSTRUCTIONS ON CACHE BOOL "Use SSE4 instructions")
@@ -184,7 +184,7 @@ index e49e30f2..b768e1d1 100644
  if (POLICY CMP0054)
     cmake_policy(SET CMP0054 NEW)
 diff --git a/dlib/external/cblas/CMakeLists.txt b/dlib/external/cblas/CMakeLists.txt
-index 0d800ae1..9c4b001f 100644
+index 0d800ae1..268335b2 100644
 --- a/dlib/external/cblas/CMakeLists.txt
 +++ b/dlib/external/cblas/CMakeLists.txt
 @@ -4,7 +4,7 @@
@@ -192,12 +192,12 @@ index 0d800ae1..9c4b001f 100644
  
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  project(cblas)
  
  
 diff --git a/dlib/external/pybind11/CMakeLists.txt b/dlib/external/pybind11/CMakeLists.txt
-index 4280ba74..bf68e735 100644
+index 4280ba74..af6d6b68 100644
 --- a/dlib/external/pybind11/CMakeLists.txt
 +++ b/dlib/external/pybind11/CMakeLists.txt
 @@ -5,7 +5,7 @@
@@ -205,12 +205,12 @@ index 4280ba74..bf68e735 100644
  # BSD-style license that can be found in the LICENSE file.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  if (POLICY CMP0048)
    # cmake warns if loaded from a min-3.0-required parent dir, so silence the warning:
 diff --git a/dlib/external/pybind11/tools/pybind11Tools.cmake b/dlib/external/pybind11/tools/pybind11Tools.cmake
-index 9b550808..c8f59eda 100644
+index 9b550808..f6199ed4 100644
 --- a/dlib/external/pybind11/tools/pybind11Tools.cmake
 +++ b/dlib/external/pybind11/tools/pybind11Tools.cmake
 @@ -5,7 +5,7 @@
@@ -218,23 +218,23 @@ index 9b550808..c8f59eda 100644
  # BSD-style license that can be found in the LICENSE file.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # Add a CMake parameter for choosing a desired Python version
  if(NOT PYBIND11_PYTHON_VERSION)
 diff --git a/dlib/java/CMakeLists.txt b/dlib/java/CMakeLists.txt
-index 4d66a513..662f41ea 100644
+index 4d66a513..bfcfa774 100644
 --- a/dlib/java/CMakeLists.txt
 +++ b/dlib/java/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required (VERSION 2.8.12)
-+cmake_minimum_required (VERSION 3.0))
++cmake_minimum_required (VERSION 3.0)
  project (myproject)
  set(java_package_name net.dlib)
  set(source_files
 diff --git a/dlib/java/cmake_swig_jni b/dlib/java/cmake_swig_jni
-index d74dd60e..1326177b 100644
+index d74dd60e..779f3fcf 100644
 --- a/dlib/java/cmake_swig_jni
 +++ b/dlib/java/cmake_swig_jni
 @@ -2,7 +2,7 @@
@@ -242,7 +242,7 @@ index d74dd60e..1326177b 100644
  # would make a CMakeLists.txt file that looks like the following:
  #
 -#   cmake_minimum_required (VERSION 2.8.12)
-+#   cmake_minimum_required (VERSION 3.0))
++#   cmake_minimum_required (VERSION 3.0)
  #   project (example)
  #   set(java_package_name "org.mycompany")
  #   set(source_files
@@ -251,23 +251,23 @@ index d74dd60e..1326177b 100644
  ################################################################################
  
 -cmake_minimum_required (VERSION 2.8.12)
-+cmake_minimum_required (VERSION 3.0))
++cmake_minimum_required (VERSION 3.0)
  
  include(${CMAKE_CURRENT_LIST_DIR}/../cmake_utils/use_cpp_11.cmake)
  
 diff --git a/dlib/matlab/CMakeLists.txt b/dlib/matlab/CMakeLists.txt
-index b9a0beab..e64933e0 100644
+index b9a0beab..9412ee74 100644
 --- a/dlib/matlab/CMakeLists.txt
 +++ b/dlib/matlab/CMakeLists.txt
 @@ -1,5 +1,5 @@
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  PROJECT(mex_functions)
  
 diff --git a/dlib/matlab/cmake_mex_wrapper b/dlib/matlab/cmake_mex_wrapper
-index 5091e4e5..af6d366a 100644
+index 5091e4e5..71a23ce2 100644
 --- a/dlib/matlab/cmake_mex_wrapper
 +++ b/dlib/matlab/cmake_mex_wrapper
 @@ -3,7 +3,7 @@
@@ -275,12 +275,12 @@ index 5091e4e5..af6d366a 100644
  # That is, just add more libraries after the name and they will be build into the mex file.
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  set(BUILDING_MATLAB_MEX_FILE true)
  set(CMAKE_POSITION_INDEPENDENT_CODE True)
 diff --git a/dlib/test/CMakeLists.txt b/dlib/test/CMakeLists.txt
-index d6147cb0..889f5328 100644
+index d6147cb0..eb2320e5 100644
 --- a/dlib/test/CMakeLists.txt
 +++ b/dlib/test/CMakeLists.txt
 @@ -3,7 +3,7 @@
@@ -288,12 +288,12 @@ index d6147cb0..889f5328 100644
  #
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # create a variable called target_name and set it to the string "dtest"
  set (target_name dtest)
 diff --git a/dlib/test/blas_bindings/CMakeLists.txt b/dlib/test/blas_bindings/CMakeLists.txt
-index 5deddee0..8bdf28ae 100644
+index 5deddee0..d49f3eba 100644
 --- a/dlib/test/blas_bindings/CMakeLists.txt
 +++ b/dlib/test/blas_bindings/CMakeLists.txt
 @@ -3,7 +3,7 @@
@@ -301,22 +301,22 @@ index 5deddee0..8bdf28ae 100644
  #
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # This variable contains a list of all the tests we are building
  # into the regression test suite.
 diff --git a/dlib/test/tools/CMakeLists.txt b/dlib/test/tools/CMakeLists.txt
-index adbd43cb..63474500 100644
+index adbd43cb..e6e62c9d 100644
 --- a/dlib/test/tools/CMakeLists.txt
 +++ b/dlib/test/tools/CMakeLists.txt
 @@ -1,4 +1,4 @@
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  add_subdirectory(../../../tools/imglab imglab_build)
  add_subdirectory(../../../tools/htmlify htmlify_build)
 diff --git a/examples/CMakeLists.txt b/examples/CMakeLists.txt
-index 5c408d74..d7198fc2 100644
+index 5c408d74..9f4c5414 100644
 --- a/examples/CMakeLists.txt
 +++ b/examples/CMakeLists.txt
 @@ -32,7 +32,7 @@
@@ -324,12 +324,12 @@ index 5c408d74..d7198fc2 100644
  
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  # Every project needs a name.  We call this the "examples" project.
  project(examples)
  
 diff --git a/tools/archive/CMakeLists.txt b/tools/archive/CMakeLists.txt
-index 8a3e4d7b..50e84bc9 100644
+index 8a3e4d7b..0ab0681f 100644
 --- a/tools/archive/CMakeLists.txt
 +++ b/tools/archive/CMakeLists.txt
 @@ -4,7 +4,7 @@
@@ -337,12 +337,12 @@ index 8a3e4d7b..50e84bc9 100644
  
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  PROJECT(archive)
  
  
 diff --git a/tools/convert_dlib_nets_to_caffe/CMakeLists.txt b/tools/convert_dlib_nets_to_caffe/CMakeLists.txt
-index f9518df2..62d79b9f 100644
+index f9518df2..e4b8f9aa 100644
 --- a/tools/convert_dlib_nets_to_caffe/CMakeLists.txt
 +++ b/tools/convert_dlib_nets_to_caffe/CMakeLists.txt
 @@ -3,7 +3,7 @@
@@ -350,12 +350,12 @@ index f9518df2..62d79b9f 100644
  #
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  set (target_name dtoc)
  
 diff --git a/tools/htmlify/CMakeLists.txt b/tools/htmlify/CMakeLists.txt
-index 02cae217..868d0809 100644
+index 02cae217..9e6d922f 100644
 --- a/tools/htmlify/CMakeLists.txt
 +++ b/tools/htmlify/CMakeLists.txt
 @@ -3,7 +3,7 @@
@@ -363,12 +363,12 @@ index 02cae217..868d0809 100644
  #
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # create a variable called target_name and set it to the string "htmlify"
  set (target_name htmlify)
 diff --git a/tools/imglab/CMakeLists.txt b/tools/imglab/CMakeLists.txt
-index 46c64fb3..9d7e663f 100644
+index 46c64fb3..c76ec827 100644
 --- a/tools/imglab/CMakeLists.txt
 +++ b/tools/imglab/CMakeLists.txt
 @@ -3,7 +3,7 @@
@@ -376,18 +376,7 @@ index 46c64fb3..9d7e663f 100644
  #
  
 -cmake_minimum_required(VERSION 2.8.12)
-+cmake_minimum_required(VERSION 3.0))
++cmake_minimum_required(VERSION 3.0)
  
  # create a variable called target_name and set it to the string "imglab"
  set (target_name imglab)
-diff --git a/tools/python/CMakeLists.txt b/tools/python/CMakeLists.txt
-index 369aebc0..da3ba3fe 100644
---- a/tools/python/CMakeLists.txt
-+++ b/tools/python/CMakeLists.txt
-@@ -1,5 +1,5 @@
- 
--CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
-+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
- 
- # Pybind11's cmake scripts enable link time optimization by default.  However,
- # it makes linking take a really long time and doesn't seem to substantively
