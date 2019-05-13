@@ -29,6 +29,35 @@ index 9daeda02..dd6a78ed 100644
  if(POLICY CMP0048)
     cmake_policy(SET CMP0048 NEW)
  endif()
+diff --git a/dlib/cmake_utils/check_if_neon_available.cmake b/dlib/cmake_utils/check_if_neon_available.cmake
+index 0510707d..e0d41ab5 100644
+--- a/dlib/cmake_utils/check_if_neon_available.cmake
++++ b/dlib/cmake_utils/check_if_neon_available.cmake
+@@ -1,7 +1,5 @@
+ # This script checks if __ARM_NEON__ is defined for your compiler
+ 
+-cmake_minimum_required(VERSION 2.8.12)
+-
+ # Don't rerun this script if its already been executed.
+ if (DEFINED ARM_NEON_IS_AVAILABLE)
+    return()
+diff --git a/dlib/cmake_utils/set_compiler_specific_options.cmake b/dlib/cmake_utils/set_compiler_specific_options.cmake
+index af499cb5..cb0bbcb1 100644
+--- a/dlib/cmake_utils/set_compiler_specific_options.cmake
++++ b/dlib/cmake_utils/set_compiler_specific_options.cmake
+@@ -1,6 +1,12 @@
+ 
+ cmake_minimum_required(VERSION 2.8.12)
+ 
++
++if(POLICY CMP0025)
++  cmake_policy(SET CMP0025 NEW)
++endif()
++
++
+ if (POLICY CMP0054)
+    cmake_policy(SET CMP0054 NEW)
+ endif()
 diff --git a/dlib/cmake_utils/use_cpp_11.cmake b/dlib/cmake_utils/use_cpp_11.cmake
 index e49e30f2..4bafba90 100644
 --- a/dlib/cmake_utils/use_cpp_11.cmake
