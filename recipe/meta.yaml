@@ -8,6 +8,7 @@ source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
   sha256: 9d2a158b2adad6acba2346f90d929558a691151aa076a0b409ee685534118692
   patches:
+    # https://github.com/conda-forge/conda-forge.github.io/issues/785
     - cxx11_detection.patch
 
 build:
