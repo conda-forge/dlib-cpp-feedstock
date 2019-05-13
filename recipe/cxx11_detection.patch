@@ -1,3 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d3cf123f..678bc2bb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,7 +1,9 @@
+ cmake_minimum_required(VERSION 2.8.12)
+ 
+ 
+-
++if(POLICY CMP0025)
++  cmake_policy(SET CMP0025 NEW)
++endif()
+ 
+ #############################################################################
+ #                                                                           #
 diff --git a/dlib/cmake_utils/use_cpp_11.cmake b/dlib/cmake_utils/use_cpp_11.cmake
 index e49e30f2..4bafba90 100644
 --- a/dlib/cmake_utils/use_cpp_11.cmake

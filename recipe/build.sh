@@ -13,4 +13,4 @@ cmake -LAH \
   -DBUILD_SHARED_LIBS=ON \
   ..
 make install -j$CPU_COUNT
-./hello
+# ./hello
