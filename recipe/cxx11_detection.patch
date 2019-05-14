@@ -177,15 +177,16 @@ index 6a07d1a5..e935b69f 100644
  
  set(USE_SSE4_INSTRUCTIONS ON CACHE BOOL "Use SSE4 instructions")
 diff --git a/dlib/cmake_utils/use_cpp_11.cmake b/dlib/cmake_utils/use_cpp_11.cmake
-index e49e30f2..c8e6ed18 100644
+index e49e30f2..baae4cce 100644
 --- a/dlib/cmake_utils/use_cpp_11.cmake
 +++ b/dlib/cmake_utils/use_cpp_11.cmake
-@@ -2,7 +2,7 @@
- # compiler has C++11 support and enables it if it does.
+@@ -3,6 +3,9 @@
  
  
--cmake_minimum_required(VERSION 2.8.12)
-+#cmake_minimum_required(VERSION 2.8.12)
+ cmake_minimum_required(VERSION 2.8.12)
++if(POLICY CMP0025)
++  cmake_policy(SET CMP0025 NEW)
++endif()
  
  if (POLICY CMP0054)
     cmake_policy(SET CMP0054 NEW)
