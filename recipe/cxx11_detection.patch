@@ -119,13 +119,16 @@ index 7d724023..ef3d8997 100644
  
  set(USE_AVX_INSTRUCTIONS ON CACHE BOOL "Use AVX instructions")
 diff --git a/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt b/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
-index bc6f0256..1802137e 100644
+index bc6f0256..a11ed905 100644
 --- a/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
 +++ b/dlib/cmake_utils/test_for_cpp11/CMakeLists.txt
-@@ -1,5 +1,5 @@
+@@ -1,5 +1,9 @@
  
--cmake_minimum_required(VERSION 2.8.12)
-+#cmake_minimum_required(VERSION 2.8.12)
+ cmake_minimum_required(VERSION 2.8.12)
++if(POLICY CMP0025)
++  cmake_policy(SET CMP0025 NEW)
++endif()
++
  project(cpp11_test)
  
  # Try to enable C++11
