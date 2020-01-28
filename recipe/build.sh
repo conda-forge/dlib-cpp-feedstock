@@ -8,5 +8,6 @@ cmake -LAH \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DCMAKE_BUILD_TYPE="Release"  \
   -DBUILD_SHARED_LIBS=ON \
+  -Dnsllib=nsllib-NOTFOUND \
   ..
 make install -j$CPU_COUNT
