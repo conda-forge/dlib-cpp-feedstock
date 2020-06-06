@@ -1,4 +1,4 @@
-{% set version = "19.19" %}
+{% set version = "19.20" %}
 
 package:
   name: dlib-cpp
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
-  sha256: 7af455bb422d3ae5ef369c51ee64e98fa68c39435b0fa23be2e5d593a3d45b87
+  sha256: fc3f0986350e8e53aceadf95a71d2f413f1eedc469abda99a462cb528741d411
   patches:
     # https://github.com/conda-forge/conda-forge.github.io/issues/785
     - cxx11_detection.patch
 
 build:
   skip: true  # [win and vc<14]
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage('dlib-cpp', max_pin='x.x') }}
 
