@@ -15,5 +15,5 @@ pin_run_as_build:
     max_pin: x
   libpng:
     max_pin: x.x
-vc:
-- '14'
+target_platform:
+- win-64
