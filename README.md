@@ -5,11 +5,9 @@ Home: http://dlib.net/
 
 Package license: BSL-1.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dlib-cpp-feedstock/blob/master/LICENSE.txt)
 
 Summary: Modern C++ toolkit containing machine learning algorithms
-
-
 
 Current build status
 ====================
