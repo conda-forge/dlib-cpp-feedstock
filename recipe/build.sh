@@ -10,6 +10,7 @@ cmake -LAH \
   -DCMAKE_BUILD_TYPE="Release"  \
   -DBUILD_SHARED_LIBS=ON \
   -DDLIB_LINK_WITH_SQLITE3=OFF \
+  -DDLIB_JPEG_SUPPORT=OFF \
   -Dnsllib=nsllib-NOTFOUND \
   ..
 make install -j$CPU_COUNT
