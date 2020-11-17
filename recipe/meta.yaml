@@ -12,7 +12,7 @@ source:
     - cxx11_detection.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('dlib-cpp', max_pin='x.x') }}
 
