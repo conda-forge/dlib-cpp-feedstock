@@ -2,7 +2,7 @@
 
 mkdir build && cd build
 
-cmake -LAH \
+cmake ${CMAKE_ARGS} -LAH \
   -DCMAKE_PREFIX_PATH="$PREFIX" \
   -DCMAKE_FIND_FRAMEWORK=LAST \
   -DCMAKE_INSTALL_PREFIX="$PREFIX" \
