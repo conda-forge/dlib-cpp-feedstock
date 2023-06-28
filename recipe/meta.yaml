@@ -1,4 +1,4 @@
-{% set version = "19.24" %}
+{% set version = "19.24.2" %}
 
 package:
   name: dlib-cpp
@@ -6,10 +6,7 @@ package:
 
 source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
-  sha256: 3cc42e84c7b1bb926c6451a21ad1595f56c5b10be3a1d7aa2f3c716a25b7ae39
-  patches:
-    # https://github.com/conda-forge/conda-forge.github.io/issues/785
-    - cxx11_detection.patch
+  sha256: 0f5c7e3de6316a513635052c5f0a16a84e1cef26a7d233bf00c21348462b6d6f
 
 build:
   number: 0
@@ -23,10 +20,11 @@ requirements:
     - cmake
     - make
     - pkg-config  # [unix]
+    - ninja
   host:
     - liblapack   # [not win]
     - libcblas  # [not win]
-    - jpeg
+      #- jpeg
     - libpng
 
 test:
