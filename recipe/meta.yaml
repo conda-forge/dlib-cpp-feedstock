@@ -9,7 +9,7 @@ source:
   sha256: 0f5c7e3de6316a513635052c5f0a16a84e1cef26a7d233bf00c21348462b6d6f
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('dlib-cpp', max_pin='x.x') }}
 
@@ -18,20 +18,20 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - ninja
     - pkg-config  # [unix]
   host:
     - liblapack   # [not win]
     - libcblas  # [not win]
     - jpeg
     - libpng
+    - zlib
 
 test:
   commands:
     - test -f ${PREFIX}/include/dlib/svm.h  # [unix]
     - test -f ${PREFIX}/lib/libdlib${SHLIB_EXT}  # [unix]
     - if not exist %PREFIX%\\Library\\include\\dlib\\svm.h exit 1  # [win]
-    #- if not exist %PREFIX%\\Library\\lib\\dlib{{ version }}.0_release_64bit_msvc1916.lib exit 1  # [win]
 
 about:
   home: http://dlib.net/
