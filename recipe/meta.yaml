@@ -7,9 +7,6 @@ package:
 source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
   sha256: 4b1f28e76020775334e67cc348ceb26a4f5161df6659848be0d3b300406400a3
-  patches:
-    # https://github.com/davisking/dlib/pull/2817
-    - cblas.patch
 
 build:
   number: 0
