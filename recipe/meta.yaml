@@ -1,4 +1,4 @@
-{% set version = "19.24.7" %}
+{% set version = "19.24.8" %}
 
 package:
   name: dlib-cpp
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
-  sha256: fb3213872b4755cbc75d88cdd3cf77555d353ac89bc105f7acb33bf665f4b2a7
+  sha256: 819cfd28639fe80ca28039f591a15e01772b7ada479de4a002b95bcb8077ce80
 
 build:
   number: 0
