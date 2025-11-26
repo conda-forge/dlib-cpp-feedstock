@@ -9,7 +9,7 @@ source:
   sha256: 705749801c7896f5c19c253b6be639f4cef2c1831a9606955f01b600b3d86d80
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('dlib-cpp', max_pin='x.x.x') }}
 
