@@ -1,4 +1,4 @@
-{% set version = "20.0" %}
+{% set version = "20.0.1" %}
 
 package:
   name: dlib-cpp
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/davisking/dlib/archive/v{{ version }}.tar.gz
-  sha256: 705749801c7896f5c19c253b6be639f4cef2c1831a9606955f01b600b3d86d80
+  sha256: dab5b4ec4b68bd7dc128a1fb7900723f89d2da107e44cd5def7d38fc57252a9d
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('dlib-cpp', max_pin='x.x.x') }}
 
