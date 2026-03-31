@@ -1,0 +1,52 @@
+context:
+  version: "20.0.1"
+
+package:
+  name: dlib-cpp
+  version: ${{ version }}
+
+source:
+  url: https://github.com/davisking/dlib/archive/v${{ version }}.tar.gz
+  sha256: dab5b4ec4b68bd7dc128a1fb7900723f89d2da107e44cd5def7d38fc57252a9d
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - if: unix
+      then: pkg-config
+  host:
+    - libjpeg-turbo
+    - libpng
+    - zlib
+    - if: unix
+      then:
+       - liblapack
+       - libcblas
+  run_exports:
+    - ${{ pin_subpackage('dlib-cpp', upper_bound='x.x.x') }}
+
+tests:
+  - script:
+      - if: unix
+        then:
+          - test -f ${PREFIX}/include/dlib/svm.h
+          - test -f ${PREFIX}/lib/libdlib${SHLIB_EXT}
+        else:
+          - if not exist %PREFIX%\\Library\\include\\dlib\\svm.h exit 1
+
+about:
+  homepage: http://dlib.net/
+  license: BSL-1.0
+  license_file: dlib/LICENSE.txt
+  summary: Modern C++ toolkit containing machine learning algorithms
+
+extra:
+  recipe-maintainers:
+    - jschueller

@@ -1,6 +1,4 @@
 
-mkdir build && cd build
-
 cmake -LAH -G "Ninja"                         ^
     -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%"    ^
     -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
@@ -12,8 +10,8 @@ cmake -LAH -G "Ninja"                         ^
     -DDLIB_WEBP_SUPPORT=OFF ^
     -DDLIB_USE_FFMPEG=OFF ^
     -DDLIB_USE_CUDA=OFF ^
-    ..
+    -B build .
 if errorlevel 1 exit 1
 
-cmake --build . --target install
+cmake --build build --target install
 if errorlevel 1 exit 1

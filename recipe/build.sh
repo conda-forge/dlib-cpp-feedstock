@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir build && cd build
-
 cmake ${CMAKE_ARGS} -LAH -G "Ninja" \
   -DCMAKE_PREFIX_PATH="$PREFIX" \
   -DCMAKE_FIND_FRAMEWORK=NEVER \
@@ -16,5 +14,5 @@ cmake ${CMAKE_ARGS} -LAH -G "Ninja" \
   -DDLIB_WEBP_SUPPORT=OFF \
   -DDLIB_USE_FFMPEG=OFF \
   -DDLIB_USE_CUDA=OFF \
-  ..
-cmake --build . --target install
+  -B build .
+cmake --build build --target install
