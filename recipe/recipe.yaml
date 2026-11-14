@@ -1,5 +1,5 @@
 context:
-  version: "20.0.1"
+  version: "20.1"
 
 package:
   name: dlib-cpp
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/davisking/dlib/archive/v${{ version }}.tar.gz
-  sha256: dab5b4ec4b68bd7dc128a1fb7900723f89d2da107e44cd5def7d38fc57252a9d
+  sha256: fbbc5f5819c598c54cc682b78813226467f36c0c0ffa19ad527412d87970fdb8
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -27,8 +27,8 @@ requirements:
     - zlib
     - if: unix
       then:
-       - liblapack
-       - libcblas
+        - liblapack
+        - libcblas
   run_exports:
     - ${{ pin_subpackage('dlib-cpp', upper_bound='x.x.x') }}
 
